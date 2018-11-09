@@ -1,0 +1,12 @@
+.vs/
+.vscode/
+src/StoreOfBuild.Data/bin/
+src/StoreOfBuild.Data/obj/
+src/StoreOfBuild.DI/bin/
+src/StoreOfBuild.DI/obj/
+src/StoreOfBuild.Domain/bin/
+src/StoreOfBuild.Domain/obj/
+src/StoreOfBuild.Web/bin/
+src/StoreOfBuild.Web/Fonts/
+src/StoreOfBuild.Web/node_modules/
+src/StoreOfBuild.Web/obj/
