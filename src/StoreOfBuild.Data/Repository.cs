@@ -23,6 +23,7 @@ namespace StoreOfBuild.Data
         public void Save(TEntity entity)
         {
             _context.Set<TEntity>().Add(entity);
+            _context.SaveChanges();
         }
     }
 }
