@@ -11,18 +11,18 @@ namespace StoreOfBuild.Domain.Products
             _categoryRepository = categoryRepository;
         }
 
-        public void Store(CategoryDto dto)
+        public void Store(int id, string name)
         {
-            var category = _categoryRepository.GetById(dto.Id);
+            var category = _categoryRepository.GetById(id);
 
             if (category == null)
             {
-                category = new Category(dto.Name);
+                category = new Category(name);
                 _categoryRepository.Save(category);
             }
             else 
             {
-                category.Update(dto.Name);
+                category.Update(name);
             }
         }
     }

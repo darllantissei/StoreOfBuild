@@ -18,6 +18,8 @@ namespace StoreOfBuild.DI
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
             services.AddScoped(typeof(CategoryStorer));
+
+            services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
         }
 
 

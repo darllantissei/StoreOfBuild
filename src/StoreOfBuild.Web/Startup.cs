@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StoreOfBuild.Data;
 using StoreOfBuild.DI;
+using StoreOfBuild.Domain;
 
 namespace StoreOfBuild.Web
 {
@@ -43,6 +44,17 @@ namespace StoreOfBuild.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            // Middle com método anônimo 
+            app.Use(async (context, next) =>
+            {
+                // Request
+                await next.Invoke();
+
+                // Response
+                var unitOfWork = (IUnitOfWork)context.RequestServices.GetService(typeof(IUnitOfWork));
+                await unitOfWork.Commit();
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
