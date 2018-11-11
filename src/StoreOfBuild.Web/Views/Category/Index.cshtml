@@ -1,4 +1,4 @@
-﻿@model StoreOfBuild.Web.ViewsModels.CategoryViewModel;
+﻿@model IEnumerable<StoreOfBuild.Web.ViewsModels.CategoryViewModel>;
 @{
     ViewData["Title"] = "Categories";
 }
@@ -11,31 +11,15 @@
 <div class="row">
     <div class="col-md-12">
         <table class="table table-hover">
+            <thead><tr>Nome</tr></thead>
             <tbody>
-                <tr>
-                    <td>
-                        <a class="name">Category 1</a>
-                    </td>
-                    <td>
-                        <a class="btn">Edit</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a class="name">Category 2</a>
-                    </td>
-                    <td>
-                        <a class="btn">Edit</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a class="name">Category 3</a>
-                    </td>
-                    <td>
-                        <a class="btn">Edit</a>
-                    </td>
-                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><a class="name">@item.Name</a></td>
+                        <td><a href="/Category/CreateOrEdit/@item.Id" class="btn">Edit</a></td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

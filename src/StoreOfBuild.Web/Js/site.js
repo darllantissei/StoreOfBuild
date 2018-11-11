@@ -2,3 +2,8 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
+function formOnFail(error) {
+    if (error && error.status == 500)
+        toastr.error(error.responseText);
+}

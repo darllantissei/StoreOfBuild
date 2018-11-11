@@ -24,5 +24,15 @@ namespace StoreOfBuild.Data
         {
             _context.Set<TEntity>().Add(entity);
         }
+
+        public virtual IEnumerable<TEntity> All()
+        {
+            var query = _context.Set<TEntity>();
+
+            if (query.Any())
+                return query.ToList();
+
+            return new List<TEntity>();
+        }
     }
 }
