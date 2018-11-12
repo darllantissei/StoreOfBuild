@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StoreOfBuild.Data;
+using StoreOfBuild.Data.Contexts;
 
 namespace StoreOfBuild.Data.Migrations
 {

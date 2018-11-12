@@ -1,9 +1,9 @@
+
+
 namespace StoreOfBuild.Domain.Products
 {
-    public class Product
+    public class Product : Entity
     {
-        public int Id { get; private set; }
-
         public string Name { get; private set; }
 
         public Category Category { get; private set; }
@@ -11,6 +11,8 @@ namespace StoreOfBuild.Domain.Products
         public decimal Price { get; private set; }
 
         public int StockQuantity { get; private set; }
+
+        public Product() { }
 
         public Product(string name, Category category, decimal price, int stockQuantity)
         {

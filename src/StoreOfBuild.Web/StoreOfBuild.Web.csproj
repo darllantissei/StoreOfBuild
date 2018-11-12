@@ -22,4 +22,10 @@
     <ProjectReference Include="..\StoreOfBuild.Domain\StoreOfBuild.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Product\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
 </Project>
