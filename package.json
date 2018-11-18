@@ -1,0 +1,12 @@
+{
+  "name": "StoreOfBuild",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "dotnet run -p .\\src\\StoreOfBuild.Web\\StoreOfBuild.Web.csproj",
+    "migration": "cd .\\src\\StoreOfBuild.Data\\ && dotnet ef --startup-project ..\\StoreOfBuild.Web\\StoreOfBuild.Web.csproj migrations add",
+    "remove-migration": "cd .\\src\\StoreOfBuild.Data\\ && dotnet ef --startup-project ..\\StoreOfBuild.Web\\StoreOfBuild.Web.csproj migrations remove",
+    "database-update": "cd .\\src\\StoreOfBuild.Data\\ && dotnet ef --startup-project ..\\StoreOfBuild.Web\\StoreOfBuild.Web.csproj database update"
+  }
+}

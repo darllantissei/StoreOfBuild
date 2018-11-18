@@ -20,7 +20,7 @@ namespace StoreOfBuild.Web.Filters
             {
                 context.HttpContext.Response.ContentType = "application/json";
                 context.HttpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                var message = context.Exception is DomainException ? context.Exception.Message : "An error ocorred";
+                var message = context.Exception is DomainException ? context.Exception.Message : $"An error ocorred. Detalhes {context.Exception.Message}";
                 context.Result = new JsonResult(message);
                 context.ExceptionHandled = true;
             }

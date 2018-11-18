@@ -42,6 +42,12 @@ namespace StoreOfBuild.Domain.Products
             DomainException.When(stockQuantity < 0, "Stock quantity is required");
         }
 
+        public void RemoveFromStock(int quantity)
+        {
+            DomainException.When((StockQuantity - quantity) < 0, "Quantity invalid to product stock");
+            this.StockQuantity -= quantity;
+        }
+
         
     }
 }

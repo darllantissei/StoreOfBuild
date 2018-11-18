@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StoreOfBuild.Domain;
 using StoreOfBuild.Domain.Products;
@@ -11,6 +12,7 @@ using StoreOfBuild.Web.ViewsModels;
 
 namespace StoreOfBuild.Web.Controllers
 {
+    [Authorize]
     public class CategoryController : Controller
     {
         private readonly CategoryStorer _categoryStorer;
