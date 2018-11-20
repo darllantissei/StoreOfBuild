@@ -71,6 +71,7 @@ namespace StoreOfBuild.Web
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseIdentity();
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>

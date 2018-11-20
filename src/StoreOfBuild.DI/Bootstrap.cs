@@ -6,6 +6,7 @@ using StoreOfBuild.Data.Contexts;
 using StoreOfBuild.Data.Identity;
 using StoreOfBuild.Data.Repositores;
 using StoreOfBuild.Domain;
+using StoreOfBuild.Domain.Account;
 using StoreOfBuild.Domain.Products;
 using StoreOfBuild.Domain.Sales;
 using System;
@@ -33,6 +34,8 @@ namespace StoreOfBuild.DI
             .AddDefaultTokenProviders();
 
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+            services.AddScoped(typeof(IAuthentication), typeof(Authentication));
 
             services.AddScoped(typeof(IRepository<Product>), typeof(ProductRepository));
 
