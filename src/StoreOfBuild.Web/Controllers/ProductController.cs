@@ -12,7 +12,7 @@ using StoreOfBuild.Web.ViewsModels;
 
 namespace StoreOfBuild.Web.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin, Manager")]
     public class ProductController : Controller
     {
         private readonly ProductStorer _productStorer;

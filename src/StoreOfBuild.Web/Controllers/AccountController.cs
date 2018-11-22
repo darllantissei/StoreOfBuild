@@ -35,5 +35,17 @@ namespace StoreOfBuild.Web.Controllers
                 return View(model);
             }
         }
+
+        public async Task<IActionResult> Logout()
+        {
+            await _authentication.Logout();
+
+            return Redirect("Login");
+        }
+
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
     }
 }

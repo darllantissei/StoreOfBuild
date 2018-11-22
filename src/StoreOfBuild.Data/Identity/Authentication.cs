@@ -22,5 +22,10 @@ namespace StoreOfBuild.Data.Identity
             var result = await _signInManager.PasswordSignInAsync(email, password, false, lockoutOnFailure: false);
             return result.Succeeded;
         }
+
+        public async Task Logout()
+        {
+            await _signInManager.SignOutAsync();
+        }
     }
 }

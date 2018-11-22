@@ -35,3 +35,7 @@ body {
         display: none;
     }
 }
+
+.bg-dark {
+    background-color: black !important;
+}

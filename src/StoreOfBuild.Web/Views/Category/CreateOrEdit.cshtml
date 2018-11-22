@@ -11,18 +11,18 @@
 </div>
 <div class="row form-wrapper">
     <div class="col-md-12">
-        <form id="form" class="form-horizontal" asp-action="CreateOredit" asp-controller="Category" 
+        <form id="form"  asp-action="CreateOredit" asp-controller="Category" 
           data-ajax="true" data-ajax-method="POST" data-ajax-failure="formOnFail" data-ajax-success="window.location = '/Category'" asp-anti-forgery>
             <input type="hidden" class="form-control" asp-for="Id" />
             <div class="form-group">
-                <label class="col-md-2 control-label">Name</label>
+                <label class="col-md-2 col-form-label">Name</label>
                 <div class="col-md-8">
                     <input type="text" class="form-control" asp-for="Name"/>
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-8">
+                <div class="offset-2 col-md-8">
                     <button class="btn btn-success">Save</button>
                 </div>
             </div>

@@ -28,14 +28,17 @@ namespace StoreOfBuild.DI
                 config.Password.RequireLowercase = false;
                 config.Password.RequireNonAlphanumeric = false;
                 config.Password.RequireUppercase = false;
-                /*config.Cookies.ApplicationCookie.LoginPath = "/Account/Login";*/
             })
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 
+            services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/Login");
+
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
             services.AddScoped(typeof(IAuthentication), typeof(Authentication));
+
+            services.AddScoped(typeof(IManager), typeof(Manager));
 
             services.AddScoped(typeof(IRepository<Product>), typeof(ProductRepository));
 

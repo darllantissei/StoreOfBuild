@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace StoreOfBuild.Domain.Account
 {
-    public interface IAuthentication
+    public interface IManager 
     {
-        Task<bool> Authenticate(string email, string password);
-        Task Logout();
+        Task<bool> CreateAsync(string email, string password, string role);
+
+        List<IUser> ListAll();
     }
 }
