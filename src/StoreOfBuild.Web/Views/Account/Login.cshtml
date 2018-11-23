@@ -38,7 +38,7 @@
                 <p>
                     <a asp-action="ForgotPassword">Forgot your password?</a>
                 </p>
-
+                @Html.Hidden("returnUrl", Context.Request.Query["ReturnUrl"])
             </form>
         </section>
     </div>

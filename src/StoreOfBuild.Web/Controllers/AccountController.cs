@@ -25,10 +25,16 @@ namespace StoreOfBuild.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
+            string returnUrl = this.Request.Form["returnUrl"];
             var result = await _authentication.Authenticate(model.Email, model.Password);
 
             if (result)
-                return Redirect("/");
+            {
+                if (!string.IsNullOrEmpty(returnUrl))
+                    return Redirect(returnUrl);
+                else
+                    return Redirect("/Home/Index");
+            }
             else
             {
                 ModelState.AddModelError(string.Empty, "Invalid loggin attempt");

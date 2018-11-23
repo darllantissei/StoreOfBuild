@@ -55,7 +55,7 @@ namespace StoreOfBuild.Web.Controllers
         public IActionResult CreateOrEdit(CategoryViewModel viewModelo)
         {
             _categoryStorer.Store(viewModelo.Id, viewModelo.Name);
-            return Redirect("Index");// View();
+            return Redirect("/Category/Index");// View();
         }      
     }
 }
