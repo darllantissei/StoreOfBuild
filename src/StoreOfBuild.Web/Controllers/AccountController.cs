@@ -33,7 +33,7 @@ namespace StoreOfBuild.Web.Controllers
                 if (!string.IsNullOrEmpty(returnUrl))
                     return Redirect(returnUrl);
                 else
-                    return Redirect("/Home/Index");
+                    return Redirect("~/Home/Index");
             }
             else
             {

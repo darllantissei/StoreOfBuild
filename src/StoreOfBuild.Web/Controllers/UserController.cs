@@ -35,7 +35,7 @@ namespace StoreOfBuild.Web.Controllers
         public async Task<IActionResult> Create(UserViewModel model)
         {
             await _manager.CreateAsync(model.Email, model.Password, model.Role);
-            return View(model);
+            return Redirect("~/User/Index");
         }
     }
 }

@@ -75,7 +75,7 @@ namespace StoreOfBuild.Web.Controllers
         public IActionResult CreateOrEdit(ProductViewModel viewModelo)
         {
             _productStorer.Store(viewModelo.Id, viewModelo.Name, viewModelo.CategoryId, viewModelo.Price, viewModelo.StockQuantity);
-            return Redirect("Index");
+            return Redirect("~/Product/Index");
         }      
     }
 }
